@@ -26,5 +26,5 @@ with mp.Pool(processes=20) as pool:
     embeddings = pool.map(worker, data)
     
 embedding = np.array(embeddings)
-output = 'data/zinc_emb_fp_1024.npy'
+output = 'zinc_emb_fp_1024.npy'
 np.save(f'data/{output}', embeddings)
