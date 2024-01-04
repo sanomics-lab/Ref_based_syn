@@ -5,7 +5,7 @@ import rdkit.Chem.AllChem as AllChem
 from rdkit import DataStructs
 
 
-def get_fingerprint(smi, radius=2, nBits):
+def get_fingerprint(smi, radius, nBits):
     if smi is None:
         return np.zeros(_nBits).reshape((-1, )).tolist()
     else:
