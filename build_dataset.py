@@ -1,27 +1,9 @@
-import os
 import numpy as np
 from rdkit import Chem
-from rdkit.Chem import AllChem, DataStructs
 from decomposer import BreakMol
 from tqdm import tqdm
-from utils_new import process_reac_file
+from utils_new import *
 
-
-def strip_dummy_atoms(mol):
-    dummy = Chem.MolFromSmiles('[*]')
-    hydrogen = Chem.MolFromSmiles('[H]')
-    mols = Chem.ReplaceSubstructs(mol, dummy, hydrogen, replaceAll=True)
-    return Chem.RemoveHs(mols[0])  
-
-def get_morgen_fingerprint(smiles, nBits=4096):
-    if smiles is None:
-        return np.zeros(nBits).reshape((-1, )).tolist()
-    else:
-        mol = Chem.MolFromSmiles(smiles)
-        fp_vec = AllChem.GetMorganFingerprintAsBitVect(mol, 2, nBits)
-        features = np.zeros((1,))
-        DataStructs.ConvertToNumpyArray(fp_vec, features)
-        return features.reshape((-1, )).tolist()
 
 def search_fragements(smiles, building_blocks, bb_emb, nBit=256):
     fp1 = get_morgen_fingerprint(smiles, nBit)
