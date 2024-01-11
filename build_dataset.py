@@ -2,7 +2,7 @@ import numpy as np
 from rdkit import Chem
 from decomposer import BreakMol
 from tqdm import tqdm
-from utils_new import *
+from utils import *
 
 
 def search_fragements(smiles, building_blocks, bb_emb, nBit=256):
@@ -21,16 +21,15 @@ def search_fragements(smiles, building_blocks, bb_emb, nBit=256):
             similar_frags.append(building_blocks[rank_idx[i]])
     return list(set(similar_frags))
 
-ref_smi = ['CC1=CC=C(NC(=O)CCCN2CCN(C/C=C/C3=CC=CC=C3)CC2)C(C)=C1']
+ref_smi = 'CC1=CC=C(NC(=O)CCCN2CCN(C/C=C/C3=CC=CC=C3)CC2)C(C)=C1'
 query_frags = []
-for rs in ref_smi:  
-    mol = Chem.MolFromSmiles(rs)
-    for c in range(1, 3):
-        bm = BreakMol(mol, lower_limit=5, cut_num=c)
-        for frags, break_bonds, ori_index in bm.enumerate_break():
-            frags = [Chem.MolToSmiles(strip_dummy_atoms(i)) for i in frags]
-            query_frags.extend(frags)
-    query_frags = list(set(query_frags))
+mol = Chem.MolFromSmiles(ref_smi)
+for c in range(1, 3):
+    bm = BreakMol(mol, lower_limit=5, cut_num=c)
+    for frags, break_bonds, ori_index in bm.enumerate_break():
+        frags = [Chem.MolToSmiles(strip_dummy_atoms(i)) for i in frags]
+        query_frags.extend(frags)
+query_frags = list(set(query_frags))
 print('query_frags :', len(query_frags))
 with open('data/query_frags.txt', 'w') as f:
     for frag in query_frags:
@@ -46,4 +45,4 @@ for cf in tqdm(query_frags):
 all_bbs = list(set(all_bbs))
 print('all_bbs :', len(all_bbs))
         
-process_reac_file('data/rxn_set_uspto.txt', all_bbs)        
+process_reac_file('data/rxn_set_uspto.txt', all_bbs)
