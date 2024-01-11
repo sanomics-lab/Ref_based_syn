@@ -5,7 +5,10 @@ You can download Zinc fragments from this [link](https://drive.google.com/file/d
 
 ## Installation
 ```
+git https://github.com/sanomics-lab/Ref_based_syn.git
+cd Ref_based_syn
 conda env create -f environment.yaml
+conda activate ref_syn
 ```
 ## Data Preparation 
 ```
