@@ -5,7 +5,7 @@ You can download Zinc fragments from this [link](https://drive.google.com/file/d
 
 ## Installation
 ```
-
+conda env create -f environment.yaml
 ```
 ## Data Preparation 
 ```
