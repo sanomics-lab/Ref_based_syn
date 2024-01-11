@@ -26,7 +26,6 @@ class SynthesisEnv(gym.Env):
         self.args = args
         self.state_dim = args.state_dim
         self.mol_mw = 500
-        dataname = args.dataname
         self.bb_emb = np.load('data/matched_bbs_emb_256.npy')
         self.building_blocks = [line.strip() for line in open('data/matched_bbs.txt', 'r')]
         self.bb_dict = {self.building_blocks[i]: i for i in range(len(self.building_blocks))}
@@ -56,7 +55,6 @@ class SynthesisEnv(gym.Env):
         ob_ = {'smi': None, 'ecfp': get_morgen_fingerprint(None, self.state_dim)}
         reward = 0.0
         done = False
-        # info = dict()
         info = []
         self.smi_old = ob['smi']
         
@@ -161,7 +159,6 @@ class SynthesisEnv(gym.Env):
         self.mol_recent = Chem.MolFromSmiles(self.smi)
         self.rxn_mask = get_reaction_mask(self.smi, self.rxns)
         a = np.array(self.rxn_mask)
-        print('init T_mask:', np.where(a==1)[0])
         ob = self.get_observation(smi=self.smi)
         
         return ob
@@ -218,3 +215,4 @@ class SynthesisEnv(gym.Env):
                 products.append(None)
             
         return products
+        
