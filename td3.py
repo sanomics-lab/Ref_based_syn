@@ -235,13 +235,15 @@ class TD3:
             done = False
             ob = self.env.reset()
             cur_temp = np.maximum(self.temp * np.exp(-self.ANNEAL_RATE * (ep + 1)), self.temp_min)
-            infos = []#{}
+            infos = []
             while not done:
                 print('select action')
                 rxn_hot, action = self.select_action(cur_temp, ob, train=True)
+                print('###', np.argmax(np.array(rxn_hot)))
                 print('Env step')
                 ob_, reward, done, info = self.env.step(ob, action, rxn_hot)
                 if bool(info):
+                    print(info)
                     total_reward.append(reward)
                     infos.append(info)
                 t_mask = np.array(get_reaction_mask(ob_['smi'], self.env.rxns))
