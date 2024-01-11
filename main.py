@@ -10,7 +10,7 @@ from utils import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--max_episodes', type=int, default=2)
-parser.add_argument('--max_action', type=int, default=3, help='max step to generate molecule')
+parser.add_argument('--max_action', type=int, default=2000, help='max step to generate molecule')
 parser.add_argument('--ckpt_dir', type=str, default='ckpt/', help='the dir for saving models')
 parser.add_argument('--predictor', type=str, default='vina', help='which reward predictor to be used')
 
