@@ -15,20 +15,20 @@ class GetTemplate(nn.Module):
         self.t_dim = t_dim
 
         modules = []
-        modules.append(nn.Linear(state_dim, 1200))
-        modules.append(nn.BatchNorm1d(1200))
+        modules.append(nn.Linear(state_dim, 512))
+        modules.append(nn.BatchNorm1d(512))
         modules.append(nn.ReLU())
         
-        modules.append(nn.Linear(1200, 1200))
-        modules.append(nn.BatchNorm1d(1200))
+        modules.append(nn.Linear(512, 512))
+        modules.append(nn.BatchNorm1d(512))
         modules.append(nn.ReLU())
         
-        modules.append(nn.Linear(1200, 1200))
-        modules.append(nn.BatchNorm1d(1200))
+        modules.append(nn.Linear(512, 512))
+        modules.append(nn.BatchNorm1d(512))
         modules.append(nn.ReLU())
         
         modules.append(nn.Dropout(0.5))
-        modules.append(nn.Linear(1200, t_dim))
+        modules.append(nn.Linear(512, t_dim))
         
         self.layers = nn.Sequential(*modules)
         
@@ -74,20 +74,20 @@ class GetAction(nn.Module):
         self.t_dim = t_dim
         
         modules = []
-        modules.append(nn.Linear(state_dim + t_dim, 1500))
-        modules.append(nn.BatchNorm1d(1500))
+        modules.append(nn.Linear(state_dim + t_dim, 512))
+        modules.append(nn.BatchNorm1d(512))
         modules.append(nn.ReLU())
         
-        modules.append(nn.Linear(1500, 1500))
-        modules.append(nn.BatchNorm1d(1500))
+        modules.append(nn.Linear(512, 512))
+        modules.append(nn.BatchNorm1d(512))
         modules.append(nn.ReLU())
         
-        modules.append(nn.Linear(1500, 1500))
-        modules.append(nn.BatchNorm1d(1500))
+        modules.append(nn.Linear(512, 512))
+        modules.append(nn.BatchNorm1d(512))
         modules.append(nn.ReLU())
         
         modules.append(nn.Dropout(0.5))
-        modules.append(nn.Linear(1500, act_dim))
+        modules.append(nn.Linear(512, act_dim))
         
         self.layers = nn.Sequential(*modules)
         
