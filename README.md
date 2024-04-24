@@ -24,3 +24,5 @@ python get_embedding.py --input data/matched_bbs.txt --output data/matched_bbs_e
 python main.py
 ```
 
+## Reference
+Cai, H., Chen, W., Jiang, J., Wen, H., Luo, X., Li, J., Lu, L., Zhao, R., Ni, X., Sun, Y., Wang, J., Li, Z., Ju, B., Jiang, X., & Bai, R. (2024). Artificial Intelligence-Assisted Optimization of Antipigmentation Tyrosinase Inhibitors: De Novo Molecular Generation Based on a Low Activity Lead Compound. In Journal of Medicinal Chemistry. American Chemical Society (ACS). https://doi.org/10.1021/acs.jmedchem.4c00091
