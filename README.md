@@ -2,6 +2,8 @@
 
 Code for the paper "Artificial Intelligence-Assisted Optimization of Antipigmentation Tyrosinase Inhibitors: De Novo Molecular Generation Based on a Low Activity Lead Compound"
 
+AI-Based Platform MolProphet [link](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01979)
+
 ## Data
 You can download Zinc fragments from this [link](https://drive.google.com/file/d/1DW926e9Xyyg2ggYYJzsLhqMzhBAlyyyp/view?usp=drive_link)
 
@@ -26,3 +28,5 @@ python main.py
 
 ## Reference
 Cai, H., Chen, W., Jiang, J., Wen, H., Luo, X., Li, J., Lu, L., Zhao, R., Ni, X., Sun, Y., Wang, J., Li, Z., Ju, B., Jiang, X., & Bai, R. (2024). Artificial Intelligence-Assisted Optimization of Antipigmentation Tyrosinase Inhibitors: De Novo Molecular Generation Based on a Low Activity Lead Compound. In Journal of Medicinal Chemistry. American Chemical Society (ACS). https://doi.org/10.1021/acs.jmedchem.4c00091
+
+Yang, K., Xie, Z., Li, Z., Qian, X., Sun, N., He, T., Xu, Z., Jiang, J., Mei, Q., Wang, J., Qu, S., Xu, X., Chen, C., & Ju, B. (2024). MolProphet: A One-Stop, General Purpose, and AI-Based Platform for the Early Stages of Drug Discovery. In Journal of Chemical Information and Modeling (Vol. 64, Issue 8, pp. 2941–2947). American Chemical Society (ACS). https://doi.org/10.1021/acs.jcim.3c01979
