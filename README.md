@@ -1,5 +1,7 @@
 # Ref_based_syn
 
+Code for the paper "Artificial Intelligence-Assisted Optimization of Antipigmentation Tyrosinase Inhibitors: De Novo Molecular Generation Based on a Low Activity Lead Compound"
+
 ## Data
 You can download Zinc fragments from this [link](https://drive.google.com/file/d/1DW926e9Xyyg2ggYYJzsLhqMzhBAlyyyp/view?usp=drive_link)
 
