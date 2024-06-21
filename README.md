@@ -7,7 +7,7 @@ This research is based on MolProphet: A One-Stop, General Purpose, and AI-Based 
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/dw8h0BBQJvY/0.jpg)](https://www.youtube.com/watch?v=dw8h0BBQJvY)
 
-[WebSite](https://www.molprophet.com) | [Video Introduction](https://www.youtube.com/watch?v=dw8h0BBQJvY) | [Paper](https://doi.org/10.1021/acs.jcim.3c01979)
+[Website](https://www.molprophet.com) | [Video Introduction](https://www.youtube.com/watch?v=dw8h0BBQJvY) | [Paper](https://doi.org/10.1021/acs.jcim.3c01979)
 
 ## Data
 You can download Zinc fragments from this [link](https://drive.google.com/file/d/1DW926e9Xyyg2ggYYJzsLhqMzhBAlyyyp/view?usp=drive_link)
